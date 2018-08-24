@@ -16,6 +16,7 @@
 		html,
 		body {
 			height: 100%;
+			min-width: 730px;
 		}
 
 		body {
@@ -99,6 +100,19 @@
 				</div>
 			</div>
 		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col s7 push-s1">
+					<label for="" id="lastmodified">最后编辑于: 2018-8-26 12:00 am</label>
+				</div>
+				<div class="col s2">
+					<a class="waves-effect waves-light btn">清空</a>
+				</div>
+				<div class="col s3">
+					<a class="waves-effect waves-light btn">单独保存</a>
+				</div>
+			</div>
+		</div>
 	</main>
 	<footer class="page-footer">
 		<div class="footer-copyright">
@@ -135,6 +149,25 @@
 		texthistory.push(text);
 		redohistory = new Array();
 		search();
+		
+		//autosave to file
+		$.ajax({
+            url: "autosave.php",        
+            type: "post",
+            dataType:"text",
+            async: false,
+            data: {"text":text},
+            success: function(result){
+                // alert(result);
+				$("#lastmodified")[0].innerHTML = "最后编辑于: " + result;
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown){
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+            }
+        });
+
 	});
 	$("#undo").bind("click", function () {
 		if (texthistory.length == 0) {
