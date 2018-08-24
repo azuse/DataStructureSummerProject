@@ -27,21 +27,18 @@ class DB{
 
 
 $time = date("Y-m-d H:s:i");
-    if($_SERVER['REQUEST_METHOD']=='POST'){
-        $file = $_FILES['file'];//得到传输的数据
-        //得到文件名称
-        $name = $file['name'];
+if($_SERVER['REQUEST_METHOD']=='POST'){
 
-        $db = new DB();
-    	$sqlselect = "USE editor";
-        $result = mysql_query($sqlselect,$db->conn);
-        $sqlsetutf8 = "set names 'utf8'";
-        $result = mysql_query($sqlsetutf8,$db->conn);
 
-        $sql = "INSERT INTO `save`(`text`,`date`) VALUES ('".$_POST['text']."','".$time."');";
-        echo $sql;
-        $result = mysql_query($sql,$db->conn);    
-        echo $time;    
+    $db = new DB();
+    $sqlselect = "USE editor";
+    $result = mysql_query($sqlselect,$db->conn);
+    $sqlsetutf8 = "set names 'utf8'";
+    $result = mysql_query($sqlsetutf8,$db->conn);
 
-    };
+    $sql = "INSERT INTO `save`(`text`,`date`) VALUES ('".$_POST['text']."','".$time."');";
+    $result = mysql_query($sql,$db->conn);    
+    echo $time;    
+
+};
 ?>
