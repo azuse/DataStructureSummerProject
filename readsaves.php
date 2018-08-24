@@ -25,9 +25,6 @@ class DB{
 
 }
 
-$file = $_FILES['file'];//得到传输的数据
-//得到文件名称
-$name = $file['name'];
 
 $db = new DB();
 $sqlselect = "USE editor";
@@ -36,8 +33,6 @@ $sqlsetutf8 = "set names 'utf8'";
 $result = mysql_query($sqlsetutf8,$db->conn);
 
 global $dataBuf;
-$sqlselect = "USE city360";
-$result = mysql_query($sqlselect,$db->conn);
 
 $sql = "SELECT * FROM `save` ";
 $result = mysql_query($sql,$db->conn);
