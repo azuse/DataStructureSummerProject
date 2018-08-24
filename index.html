@@ -146,11 +146,11 @@
 			url: "autosave.php",
 			type: "post",
 			dataType: "text",
-			async: false,
+			async: true,
 			data: { "text": text },
 			success: function (result) {
 				// alert(result);
-				$("#lastmodified")[0].innerHTML = "最后保存于: " + result;
+				$("#lastmodified")[0].innerHTML = "最后编辑于: " + result;
 			},
 			error: function (XMLHttpRequest, textStatus, errorThrown) {
 				alert(XMLHttpRequest.status);
@@ -268,7 +268,7 @@
 		url: "readtime.php",
 		type: "post",
 		dataType: "text",
-		async: false,
+		async: true,
 		success: function (result) {
 			// alert(result);
 			$("#lastmodified")[0].innerHTML = "最后编辑于: " + result;
@@ -284,7 +284,7 @@
 		url: "readsaves.php",
 		type: "post",
 		dataType: "text",
-		async: false,
+		async: true,
 		success: function (result) {
 			// alert(result);
 			jsonData = eval(result);
