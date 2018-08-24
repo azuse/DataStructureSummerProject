@@ -109,9 +109,12 @@
 					<a class="waves-effect waves-light btn" onclick="javascript:$('icon_prefix2').val('');">清空</a>
 				</div>
 				<div class="col s3">
-					<a class="waves-effect waves-light btn">单独保存</a>
+					<a class="waves-effect waves-light btn" id="save">单独保存</a>
 				</div>
 			</div>
+		</div>
+		<div class="container" id="historysave">
+
 		</div>
 	</main>
 	<footer class="page-footer">
@@ -277,7 +280,48 @@
 		}
 	});
 
+	$.ajax({
+		url: "readsaves.php",
+		type: "post",
+		dataType: "text",
+		async: false,
+		success: function (result) {
+			// alert(result);
+			$("#icon_prefix2").val("");
+			jsonData = eval(result);
+			for (item in jsonData) {
+				var div = '<div class="row"><div class="col s12"><div class="card"><div class="card-content"><p>' + jsonData[item].text + '</p><div class="divider" style="margin-top:10px;"></div><label for="">最后编辑于: ' + jsonData[item].date + '</label></div></div></div></div>'
+				$("#historysave")[0].innerHTML = $("#historysave")[0].innerHTML + div;
+			}
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			alert(XMLHttpRequest.status);
+			alert(XMLHttpRequest.readyState);
+			alert(textStatus);
+		}
+	})
 
+	$("#save").bind("click", function () {
+		var text = $("#icon_prefix2")[0].value;
+		$.ajax({
+			url: "singlesave.php",
+			type: "post",
+			dataType: "text",
+			async: false,
+			data: { "text": text },
+			success: function (result) {
+				// alert(result);
+				$("#icon_prefix2").val("");
+				var div = '<div class="row"><div class="col s12"><div class="card"><div class="card-content"><p>' + text + '</p><div class="divider" style="margin-top:10px;"></div><label for="">最后编辑于: ' + result + '</label></div></div></div></div>'
+				$("#historysave")[0].innerHTML = $("#historysave")[0].innerHTML + div;
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+				alert(XMLHttpRequest.status);
+				alert(XMLHttpRequest.readyState);
+				alert(textStatus);
+			}
+		});
+	})
 </script>
 <!-- Insert this line after script imports -->
 <script>if (window.module) module = window.module;</script>
