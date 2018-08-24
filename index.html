@@ -179,7 +179,7 @@
 
 		//autosave to file
 		clearTimeout(timeid);
-		timeid = setTimeout("savetext()", 3000);
+		timeid = setTimeout("savetext()", 1000);
 	});
 
 	$("#undo").bind("click", function () {
@@ -287,7 +287,6 @@
 		async: false,
 		success: function (result) {
 			// alert(result);
-			$("#icon_prefix2").val("");
 			jsonData = eval(result);
 			for (item in jsonData) {
 				var div = '<div class="row"><div class="col s12"><div class="card"><div class="card-content"><p>' + jsonData[item].text + '</p><div class="divider" style="margin-top:10px;"></div><label for="">最后编辑于: ' + jsonData[item].date + '</label></div></div></div></div>'
