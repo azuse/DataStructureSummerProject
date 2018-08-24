@@ -6,8 +6,8 @@ class DB{
     function __construct()
     { //connect
         $dbhost = "localhost";
-        $account = "root";
-        $password = "misakaxindex";
+        $account = "localroot";
+        $password = "azuse";
         $dbname = "editor";
         
         $this->conn = mysql_connect($dbhost,$account,$password);        
