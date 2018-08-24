@@ -8,3 +8,4 @@
 <p>使用js开发，顶部功能按钮分别为题目要求的：撤销、恢复、统计文字、统计数字、统计空格、统计某一字符串（搜索）等功能。编辑的文章自动保存至服务器，下次打开时自动恢复。也可以点击单独保存，保存至数据库，不会被覆盖。</p>
 <p>程序入口：index.html</p>
 <p>在线链接：<a href="http://azusebox.moe/editor">Texteditor</a></p>
+<img src="http://azusebox.moe/wp-content/uploads/2018/08/FireShot-Capture-4-简单文本编辑器-http___azusebox.moe_editor_.png">
