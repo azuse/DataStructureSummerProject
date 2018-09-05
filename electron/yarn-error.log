@@ -1,0 +1,69 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js --proxy socks5://127.0.0.1:1080
+
+PATH: 
+  C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Java\jdk1.8.0_111\bin;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\dotnet\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Server 5.7\bin;D:\www\php;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\nodejs;C:\Users\33029\AppData\Local\Programs\Python\Python37\Scripts\;C:\Users\33029\AppData\Local\Programs\Python\Python37\;E:\Xilinx\Vivado\2017.2\;C:\Users\33029\AppData\Local\Microsoft\WindowsApps;C:\modeltech_pe_10.4c\win32pe;C:\Users\33029\AppData\Local\GitHubDesktop\bin;C:\Users\33029\AppData\Roaming\npm;C:\Users\33029\AppData\Local\Yarn\bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  10.9.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: Invalid protocol: socks5:
+      at Request.module.exports.Request.init (C:\Program Files (x86)\Yarn\lib\cli.js:137737:31)
+      at new Request (C:\Program Files (x86)\Yarn\lib\cli.js:137410:8)
+      at request (C:\Program Files (x86)\Yarn\lib\cli.js:126685:10)
+      at RequestManager.execute (C:\Program Files (x86)\Yarn\lib\cli.js:64254:15)
+      at RequestManager.shiftQueue (C:\Program Files (x86)\Yarn\lib\cli.js:64281:10)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:64032:13
+      at new Promise (<anonymous>)
+      at new F (C:\Program Files (x86)\Yarn\lib\cli.js:23624:28)
+      at RequestManager.request (C:\Program Files (x86)\Yarn\lib\cli.js:64030:19)
+      at NpmRegistry.request (C:\Program Files (x86)\Yarn\lib\cli.js:33715:32)
+
+npm manifest: 
+  {
+    "name": "simpletexteditor",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node index.js",
+      "build-css": "node-sass -o css scss/scss/materialize.scss",
+      "watch-css": "node-sass -o css scss",
+      "sass": "node-sass",
+      "packager": "electron-packager ./ simpletexteditor --all --out ./OutApp --app-version 1.0.0 --overwrite",
+      "pack": "electron-builder --dir",
+      "dist": "electron-builder"
+    },
+    "author": "azuse",
+    "license": "ISC",
+    "dependencies": {
+      "electron": "^1.4.10"
+    },
+    "devDependencies": {
+      "electron-packager": "^12.1.1"
+    },
+    "build": {
+      "appId": "com.electron.${name}",
+      "win":{
+        "target":"portable",
+        "icon":"app/icon.png"
+  
+      },
+      "files": ["app/*", "app/icon.png"]
+    }
+    
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

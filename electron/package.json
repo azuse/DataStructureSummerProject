@@ -1,0 +1,38 @@
+{
+  "name": "simpletexteditor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build-css": "node-sass -o css scss/scss/materialize.scss",
+    "watch-css": "node-sass -o css scss",
+    "sass": "node-sass",
+    "packager": "electron-packager ./ simpletexteditor --all --out ./OutApp --app-version 1.0.0 --overwrite",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "author": "azuse",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "electron-builder": "^20.28.3",
+    "electron-packager": "^12.1.1"
+  },
+  "build": {
+    "appId": "com.electron.${name}",
+    "win": {
+      "target": "portable",
+      "icon": "app/icon.png"
+    },
+    "files": [
+      "index.js",
+      "app/res/css/*",
+      "app/res/js/*",
+      "app/*",
+      "app/icon.png"
+    ]
+  }
+}
