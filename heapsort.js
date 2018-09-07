@@ -131,15 +131,28 @@ async function heap_sort(arr) {
 }
 
 var arr;
-$("#btn").bind("click",async function (e) {
+// $("#btn").bind("click",function (e) {
+//   ctx.fillStyle = 'white';
+//   ctx.fillRect(0,0,1500,1500);
+//   string = $("#inputArray").val();
+//   arrstr = string.split(',');
+//   arr = Array();
+//   for(item in arrstr){
+//     arr[item] = parseFloat(arrstr[item]);
+//   }
+//   drawarr(arr);
+//   heap_sort(arr);
+// });
+
+function docal(){
   ctx.fillStyle = 'white';
   ctx.fillRect(0,0,1500,1500);
   string = $("#inputArray").val();
   arrstr = string.split(',');
   arr = Array();
   for(item in arrstr){
-    arr[item] = parseInt(arrstr[item]);
+    arr[item] = parseFloat(arrstr[item]);
   }
-  await drawarr(arr);
-  await heap_sort(arr);
-});
+  drawarr(arr);
+  heap_sort(arr);
+}

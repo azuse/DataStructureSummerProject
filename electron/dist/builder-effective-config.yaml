@@ -4,11 +4,11 @@ directories:
 appId: 'com.electron.${name}'
 win:
   target: portable
-  icon: app/icon.png
+  icon: app/heapsort.png
 files:
   - index.js
   - app/res/css/*
   - app/res/js/*
   - app/*
-  - app/icon.png
+  - app/heapsort.png
 electronVersion: 1.8.8

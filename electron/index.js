@@ -8,12 +8,12 @@ let win
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600,autoHideMenuBar :true,minWidth :800,minHeight :300})
+  win = new BrowserWindow({width: 500, height: 700,autoHideMenuBar :true,minWidth :500,minHeight :700})
   win.setMenu(null);
 
   // and load the index.html of the app.
   win.loadURL(url.format({
-    pathname: path.join(__dirname, 'app/index.html'),
+    pathname: path.join(__dirname, 'app/heapsort.html'),
     protocol: 'file:',
     slashes: true
   }))
